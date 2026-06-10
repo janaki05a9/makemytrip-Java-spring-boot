@@ -1,6 +1,6 @@
-FROM maven:3.8.5-openjdk-17
+FROM maven:3.8.5-openjdk-17-slim
 WORKDIR /app
-COPY . .
-RUN ./mvnw clean install -DskipTests
+COPY makemytour/ .
+RUN chmod +x mvnw && ./mvnw clean install -DskipTests
 EXPOSE 8080
-CMD ["java", "-jar", "target/*.jar"]
+ENTRYPOINT ["java", "-jar", "target/makemytour-0.0.1-SNAPSHOT.jar"]
