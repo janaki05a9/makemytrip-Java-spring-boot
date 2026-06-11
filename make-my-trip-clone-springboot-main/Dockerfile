@@ -3,4 +3,4 @@ WORKDIR /app
 COPY makemytour/ .
 RUN chmod +x mvnw && ./mvnw clean install -DskipTests
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "target/makemytour-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "target/makemytrip-0.0.1-SNAPSHOT.jar"]
